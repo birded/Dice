@@ -1,8 +1,10 @@
-//try highest and lowest roll
-//button?
 //visuals
+//font
+
 
 int sum = 0;
+int highRoll = 0;
+int lowRoll = 1000;
 
 void setup()
 {
@@ -19,13 +21,26 @@ void draw()
 			Die bob = new Die(i,j);
 			bob.show();
 			sum = sum + bob.roll ;
+
+
 		}
+	}
+
+
+	if(sum > highRoll){
+		highRoll = sum;
+	}
+
+	if(sum < lowRoll){
+		lowRoll = sum;
 	}
 
 	fill(255);
 	textSize(26);
 	textAlign(CENTER,CENTER);
 	text("Sum:" + sum, 250, 400);
+	text("Highest roll: " + highRoll, 250, 430);
+	text("Lowest roll: " + lowRoll , 250, 460);
 
 }
 void mousePressed()
