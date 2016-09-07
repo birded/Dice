@@ -1,3 +1,9 @@
+//try highest and lowest roll
+//button?
+//visuals
+
+int sum = 0;
+
 void setup()
 {
 	size(500,500);
@@ -8,30 +14,42 @@ void draw()
 {
 	//your code here
 	background(50);
-	Die dice = new Die(250,250);
-	dice.show();
+	for(int i = 40; i < 500; i +=60){
+		for(int j = 50; j < 300 ; j += 60){
+			Die bob = new Die(i,j);
+			bob.show();
+			sum = sum + bob.roll ;
+		}
+	}
+
+	fill(255);
+	textSize(26);
+	textAlign(CENTER,CENTER);
+	text("Sum:" + sum, 250, 400);
 
 }
 void mousePressed()
 {
 	redraw();
+	sum = 0;
 }
 class Die //models one single dice cube
 {
 	//variable declarations here
-	int myX, myY;
+	int myX, myY, roll;
 
-	Die(int x, int y) //constructor
+	Die(int x, int y)
 	{
 		//variable initializations here
 		myX = x;
 		myY = y;
+		roll();
 
 	}
 
 	void roll()
 	{
-		//your code here
+		roll = (int)(Math.random() * 6 + 1);
 	}
 	void show()
 	{
@@ -39,7 +57,6 @@ class Die //models one single dice cube
 		fill(255);
 		rect(myX, myY, 50, 50, 5);
 
-		int roll = (int)(Math.random() * 6);
 		fill(0);
 
 		if(roll == 1)
@@ -74,7 +91,14 @@ class Die //models one single dice cube
 		}
 		else
 		{
-			//try for loops
+			for(int i = myX-13 ; i < (myX + 14) ; i = i+13) //row
+			{
+				for(int j = myY-13 ; j < (myY + 14) ; j = j+13) //col
+				{
+				ellipse(i, j, 10, 10);
+				}
+			}
+
 		}
 
 
