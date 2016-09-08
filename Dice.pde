@@ -15,13 +15,13 @@ void draw()
 {
 	background(50);
 	for(int i = 40; i < 500; i +=60){
-		for(int j = 50; j < 300 ; j += 60){
-			Die bob = new Die(i,j);
+		//for(int j = 50; j < 300 ; j += 60){
+			Die bob = new Die(i,250);
 			bob.show();
 			sum = sum + bob.roll ;
 
 
-		}
+		//}
 	}
 
 
