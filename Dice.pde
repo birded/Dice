@@ -43,8 +43,9 @@ void draw()
 }
 void mousePressed()
 {
-	redraw();
 	sum = 0;
+	redraw();
+	
 }
 class Die //models one single dice cube
 {
@@ -108,7 +109,7 @@ class Die //models one single dice cube
 		}
 		else
 		{
-			for(int i = myX-13 ; i < (myX + 14) ; i = i+13) //row
+			for(int i = myX-13 ; i < (myX + 24) ; i = i+25) //row
 			{
 				for(int j = myY-13 ; j < (myY + 14) ; j = j+13) //col
 				{
