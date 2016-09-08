@@ -1,6 +1,4 @@
 //visuals
-//font
-
 
 int sum = 0;
 int highRoll = 0;
@@ -11,10 +9,10 @@ void setup()
 	size(500,500);
 	noLoop();
 	rectMode(CENTER);
+	noStroke();
 }
 void draw()
 {
-	//your code here
 	background(50);
 	for(int i = 40; i < 500; i +=60){
 		for(int j = 50; j < 300 ; j += 60){
@@ -68,7 +66,6 @@ class Die //models one single dice cube
 	}
 	void show()
 	{
-		//your code here
 		fill(255);
 		rect(myX, myY, 50, 50, 5);
 
@@ -76,21 +73,25 @@ class Die //models one single dice cube
 
 		if(roll == 1)
 		{
+			fill(246,129,129);
 			ellipse(myX, myY, 10, 10);
 		}
 		else if(roll == 2)
 		{
+			fill(231,189,129	);
 			ellipse(myX+13, myY-10, 10, 10);
 			ellipse(myX-13, myY+10, 10, 10);
 		}
 		else if(roll == 3)
 		{
+			fill(220,214,133);
 			ellipse(myX, myY, 10, 10);
 			ellipse(myX+13, myY-10, 10, 10);
 			ellipse(myX-13, myY+10, 10, 10);
 		}
 		else if(roll == 4)
 		{
+			fill(158,220,133);
 			ellipse(myX-13, myY-10, 10, 10);
 			ellipse(myX+13, myY-10, 10, 10);
 			ellipse(myX-13, myY+10, 10, 10);
@@ -98,6 +99,7 @@ class Die //models one single dice cube
 		}
 		else if(roll == 5)
 		{
+			fill(133,191,220);
 			ellipse(myX-13, myY-10, 10, 10);
 			ellipse(myX+13, myY-10, 10, 10);
 			ellipse(myX, myY, 10, 10);
@@ -110,6 +112,7 @@ class Die //models one single dice cube
 			{
 				for(int j = myY-13 ; j < (myY + 14) ; j = j+13) //col
 				{
+				fill(174,133,220);
 				ellipse(i, j, 10, 10);
 				}
 			}
