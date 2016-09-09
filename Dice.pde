@@ -15,13 +15,13 @@ void draw()
 {
 	background(50);
 	for(int i = 40; i < 500; i +=60){
-		//for(int j = 50; j < 300 ; j += 60){
-			Die bob = new Die(i,250);
+		for(int j = 50; j < 300 ; j += 60){
+			Die bob = new Die(i, j);
 			bob.show();
 			sum = sum + bob.roll ;
 
 
-		//}
+		}
 	}
 
 
@@ -109,7 +109,7 @@ class Die //models one single dice cube
 		}
 		else
 		{
-			for(int i = myX-13 ; i < (myX + 24) ; i = i+25) //row
+			for(int i = myX-13 ; i < (myX + 24) ; i = i+26) //row
 			{
 				for(int j = myY-13 ; j < (myY + 14) ; j = j+13) //col
 				{
