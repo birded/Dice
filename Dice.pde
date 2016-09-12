@@ -13,7 +13,7 @@ void setup()
 }
 void draw()
 {
-	background(50);
+	background(61,104,59);
 	for(int i = 40; i < 500; i +=60){
 		for(int j = 50; j < 300 ; j += 60){
 			Die bob = new Die(i, j);
@@ -33,12 +33,14 @@ void draw()
 		lowRoll = sum;
 	}
 
-	fill(255);
 	textSize(26);
 	textAlign(CENTER,CENTER);
-	text("Sum:" + sum, 250, 400);
-	text("Highest roll: " + highRoll, 250, 430);
-	text("Lowest roll: " + lowRoll , 250, 460);
+	fill(255,255,255,50);
+	rect(250,405,250,100);
+	fill(255);
+	text("Sum:" + sum, 250, 370);
+	text("Highest roll: " + highRoll, 250, 400);
+	text("Lowest roll: " + lowRoll , 250, 430);
 
 }
 void mousePressed()
